@@ -17,17 +17,17 @@ const Categoria = () => {
 
     return (
         <div>
-            <h2 className={Style.text}>{category} Products</h2>
-            <div className={Style.imagen}>
+            <h2 >{category} Products</h2>
+            <div >
                 {products.map((product) => (
                     <Card key={product.id}>
                         <Card.Body >
                             <Card.Img src={product.image}  />
-                            <Card.Title><h1 className={Style.title} >{product.title}</h1></Card.Title>
-                            <Card.Text className={Style.Descrp}>{product.description}</Card.Text>
-                            <Card.Text className={Style.price} >${product.price}</Card.Text>
+                            <Card.Title><h1 >{product.title}</h1></Card.Title>
+                            <Card.Text >{product.description}</Card.Text>
+                            <Card.Text >${product.price}</Card.Text>
                             <Link to={`/Detalle/${product.id}`}>
-                                <Button className={Style.buttom}>+ Info</Button>
+                                <Button >+ Info</Button>
                             </Link>
                         </Card.Body>
                     </Card>
