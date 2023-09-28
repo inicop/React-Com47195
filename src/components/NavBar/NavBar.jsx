@@ -1,34 +1,31 @@
 import React from 'react'
 import CartWidget from './CartWidget'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">Joafra</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Categorías</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Ofertas</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Ayuda</a>
-            </li>
-          </ul>
-        </div>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="/"> JoaFra </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown to="/categories" title="Categories" id="basic-nav-dropdown" active>
+              <NavDropdown.Item as={Link} to="/categories/electronics">Electronics</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/jewelery">Jewelry</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/men's clothing">Men's clothing</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/women's clothing">Women's clothing</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
         <CartWidget />
-      </div>
-    </nav>
-  )
+      </Container>
+    </Navbar>
+  );
 }
 
-export default NavBar
+export default NavBar;

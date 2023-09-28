@@ -1,14 +1,24 @@
 import React from 'react'
 import Button from '../Button/Button'
+import { useState } from 'react'
 
-const Counter = ({ count, sumar, restar }) => {
+
+const Counter = () => {
+  const [count, setCount] = useState (0)
+  const increment = () => {
+    setCount(count + 1)
+  }
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1)
+    }
+  }
 
   return (
     <div>
-      <p>Valor: {count}</p>
-      <Button text="+" cb={sumar} />
-      <Button text="-" cb={restar} />
-
+      <Button cb ={increment} text="+"/>
+      <span> {count} </span>
+      <Button cb ={decrement} text="-"/>
     </div>
   )
 }

@@ -1,26 +1,21 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
-import Card from './components/Card'
-import ItemListContainer from './components/ItemListCointainer/ItemListContainer'
-
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Pages/Home'
+import Detalle from './components/Pages/Detalle'
+import Categoria from './components/Pages/Categoria'
 
 function App() {
 
   return (
-    <div className='container'>
+    <>
       <NavBar />
-      <ItemListContainer greeting="Bienvenidos" />
-      <div className="row">
-        <div className="col-3">
-          <Card
-            title="MacBook Air"
-            description="Procesador A1, 8 GB de RAM"
-            img="https://www.apple.com/v/macbook-air/q/images/overview/compare/compare_mba_m1__dsgh2hoxlkae_large_2x.png"
-          />
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/categories" element={<Categoria />} />
+        <Route path='/producto/:id' element={<Detalle />} />
+      </Routes>
+    </>
   )
 }
-
 export default App
