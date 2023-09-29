@@ -30,6 +30,8 @@ const paragraphStyle = {
 
 const ItemDetail = ({ item }) => {
     return (
+
+        
         <Container style={itemDetailStyle}>
             <h5 style={titleStyle}>{item.title}</h5>
             <img src={item.image} alt={item.title} style={imageStyle} />
