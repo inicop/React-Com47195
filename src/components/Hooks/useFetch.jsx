@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const useFetch = (url) => {
+const useFetch = (url, category) => {
     const [data, setData] = useState(null)
     const getData = () => {
         fetch(url)
@@ -11,7 +11,7 @@ const useFetch = (url) => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [category])
 
     return [data]
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import CardItem from '../CardItem'
+import CardItem from '../Card/CardItem'
 
 const ItemList = ({ items }) => {
     return (

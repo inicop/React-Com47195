@@ -7,9 +7,17 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
 
-    const[items] = useFetch('https://fakestoreapi.com/products');
-     //const[items] = useFetch('https://fakestoreapi.com/products/category/jewelery');
+  const { category } = useParams();
+  let itemsFetchUrl = 'https://fakestoreapi.com/products';
 
+  if (category === undefined) {
+    itemsFetchUrl = 'https://fakestoreapi.com/products';
+  } else {
+
+    itemsFetchUrl = `https://fakestoreapi.com/products/category/${category}`;
+  }
+
+  const [items] = useFetch(itemsFetchUrl, category);
 
   return (
     <Container>
