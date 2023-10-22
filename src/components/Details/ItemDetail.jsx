@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Counter from '../Counter/Counter';
 
 const itemDetailStyle = {
     maxWidth: '500px', // Ancho máximo del contenedor
@@ -28,7 +29,7 @@ const paragraphStyle = {
     margin: '10px 0', // Espaciado vertical
 };
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, onAdd }) => {
     return (
 
         
@@ -38,6 +39,7 @@ const ItemDetail = ({ item }) => {
             <p style={paragraphStyle}>Descripción: {item.description}</p>
             <p style={paragraphStyle}>Precio: ${item.price}</p>
             <p style={paragraphStyle}>Categoría: {item.category}</p>
+            <Counter onAdd={onAdd}/>
         </Container>
     );
 };

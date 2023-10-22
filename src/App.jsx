@@ -1,5 +1,7 @@
 import NavBar from './components/NavBar/NavBar'
 import Rutas from './components/Rutas/Rutas'
+import UserContextProvider from './context/UserContextProvider'
+import CartContextProvider from './context/cartContext/CartContextProvider'
 
 
 
@@ -7,8 +9,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <Rutas />
+      <CartContextProvider>
+        <UserContextProvider>
+          <NavBar />
+          <Rutas />
+        </UserContextProvider>
+      </CartContextProvider>
     </>
   )
 }
