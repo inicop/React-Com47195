@@ -1,23 +1,28 @@
 import React from 'react'
 import { BsCart3 } from "react-icons/bs"
 import UserContext from '../../context/UserContext/'
+import CartContext from '../../context/cartContext/CartContext/'
+import { useContext } from 'react'
 
 
 const CartWidget = () => {
 
-    const style = {
-        color: "black",
-        marginRight: "10px"
-    }
+    const {cart} = useContext(CartContext)
+
     return (
-        <div style={style}>
-            <UserContext.Consumer>
-                {
-                    ({user}) => <p> Welcome,{user.name}</p>
-                    // return  < BsCart3 /> <span>{user.name}</span>
-                }
-            </UserContext.Consumer>
-        </div>
+        <>
+            <div>
+                <UserContext.Consumer>
+                    {
+                        ({ user }) => <p className = "Usuario" > Welcome,{user.name}</p>
+                    }
+                </UserContext.Consumer>
+            </div>
+
+            <div>
+                < BsCart3 /> <span>{cart.length}</span>
+            </div>
+        </>
     )
 }
 

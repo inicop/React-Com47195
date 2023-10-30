@@ -38,7 +38,7 @@ const ItemDetail = ({ item, onAdd }) => {
             <img src={item.image} alt={item.title} style={imageStyle} />
             <p style={paragraphStyle}>Descripción: {item.description}</p>
             <p style={paragraphStyle}>Precio: ${item.price}</p>
-            <p style={paragraphStyle}>Categoría: {item.category}</p>
+            <p style={paragraphStyle}>Categoría: {item.categoryId}</p>
             <Counter onAdd={onAdd}/>
         </Container>
     );

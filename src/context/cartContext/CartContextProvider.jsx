@@ -2,9 +2,11 @@ import React from 'react'
 import CartContex from './CartContext'
 import { useState } from "react"
 
+
 const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-    console.log("CONTEXT", cart)
+
+
 
     const addItem = (item, q) => {
         setCart([
@@ -14,15 +16,20 @@ const CartContextProvider = ({ children }) => {
             }
         ])
     }
-    const removeItem = (id) =>{
+    const removeItem = (id) => {
         const newCart = cart.filter((el) => el.item.id !== id);
-        setCart (newCart)
+        setCart(newCart)
+    }
+
+    const clear = () => {
+        setCart([])
     }
 
     const values = {
         cart,
         addItem,
-        removeItem
+        removeItem,
+        clear
     }
     return (
         <CartContex.Provider value={values}>
