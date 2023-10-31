@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import Counter from '../Counter/Counter';
 
 const itemDetailStyle = {
-    maxWidth: '500px', // Ancho máximo del contenedor
+    maxWidth: '600px', // Ancho máximo del contenedor
     margin: '0 auto', // Centrar el contenedor horizontalmente
     padding: '20px', // Espaciado interno
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Sombra sutil
@@ -19,7 +19,7 @@ const titleStyle = {
 };
 
 const imageStyle = {
-    maxWidth: '100%', // Asegura que la imagen no desborde el contenedor
+    maxWidth: '60%', // Asegura que la imagen no desborde el contenedor
     height: 'auto', // Escala la imagen proporcionalmente
     marginBottom: '20px', // Espaciado inferior
 };

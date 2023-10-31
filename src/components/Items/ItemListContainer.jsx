@@ -8,33 +8,33 @@ import React, { useState, useEffect } from 'react'
 
 const ItemListContainer = () => {
 
-  const { categoryId } = useParams();
+  const { category } = useParams();
 
   const [items, setItems] = useState([]);
-
-  //let itemsFetchUrl = 'https://fakestoreapi.com/products';
 
   useEffect(() => {
     const db = getFirestore();
     const itemCollection = collection(db, "items");
-    const q = query(itemCollection, where("catergoryId", "==", "celular"))
-    //console.log(q)
-    console.log(q)
+
+    console.log(itemCollection)
+    console.log(category)
+    let q;
+
+    if (category === undefined) {
+      q = itemCollection;
+
+    } else {
+      q = query(itemCollection, where("categoryId", "==", category))
+
+    }
     getDocs(q)
       .then(snapshot => {
         const allData = snapshot.docs.map(document => ({ id: document.id, ...document.data() }))
         setItems(allData)
       })
-  }, [])
 
-  // if (category === undefined) {
-  //   itemsFetchUrl = 'https://fakestoreapi.com/products';
-  // } else {
+  }, [category])
 
-  //   itemsFetchUrl = `https://fakestoreapi.com/products/category/${category}`;
-  // }
-
-  //const [items] = useFetch(itemsFetchUrl, category);
 
   return (
     <Container>

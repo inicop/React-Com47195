@@ -1,11 +1,12 @@
 import React from 'react'
 import Button from '../Button/Button'
+import ButtonCart from '../Button/ButtonCart'
 import { useState } from 'react'
 
 
-const Counter = ({onAdd}) => {
-  const [count, setCount] = useState (1)
-  
+const Counter = ({ onAdd }) => {
+  const [count, setCount] = useState(1)
+
   const increment = () => {
     setCount(count + 1)
   }
@@ -17,10 +18,13 @@ const Counter = ({onAdd}) => {
 
   return (
     <div>
-      <Button cb ={increment} text="+"/>
+      <Button cb={increment} text="+" />
       <span> {count} </span>
-      <Button cb ={decrement} text="-"/>
-      <Button cb = {()=> onAdd(count)} text="Agregar al Carrito"/>
+      <Button cb={decrement} text="-" />
+      <div>
+        <ButtonCart cb={() => onAdd(count)} text="Agregar al Carrito" />
+      </div>
+
     </div>
   )
 }

@@ -16,10 +16,9 @@ export const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <NavDropdown to="/categories" title="Categories" id="basic-nav-dropdown" active>
-              <NavDropdown.Item as={Link} to="/categories/electronics">Electronics</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/categories/jewelery">Jewelry</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/categories/men's clothing">Men's clothing</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/categories/women's clothing">Women's clothing</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/computadoras">Computadoras</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/celulares">Celulares</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/categories/tablets">Tablets</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/user">User</Nav.Link>
             <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
