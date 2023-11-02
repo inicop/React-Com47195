@@ -1,10 +1,10 @@
 import ItemDetail from './ItemDetail'
-import useFetch from '../Hooks/useFetch'
 import CartContext from '../../context/cartContext/CartContext'
 import React, { useState, useEffect, useContext } from 'react'
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = ({ id }) => {
+    
     const onAdd = (q) => {
         addItem(item, q)
     }

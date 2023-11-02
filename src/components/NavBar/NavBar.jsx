@@ -21,10 +21,9 @@ export const NavBar = () => {
               <NavDropdown.Item as={Link} to="/categories/tablets">Tablets</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/user">User</Nav.Link>
-            <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <CartWidget />
+        <Nav.Link as={Link} to="/cart"> <CartWidget/> </Nav.Link>
       </Container>
     </Navbar>
   );

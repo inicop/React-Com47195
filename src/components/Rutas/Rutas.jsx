@@ -5,6 +5,7 @@ import Detalle from '../Pages/Detalle'
 import Categoria from '../Pages/Categoria'
 import UserProfile from '../Pages/UserProfile'
 import Cart from '../Pages/Cart/'
+import Checkout from '../Pages/Checkout'
 
 const Rutas = () => {
     return (
@@ -15,6 +16,7 @@ const Rutas = () => {
                 <Route path="/categories/:category" element={<Categoria />} />
                 <Route path='/producto/:id' element={<Detalle />} />
                 <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout/:orderId' element={<Checkout />} />
                 
                 
             </Routes>

@@ -5,7 +5,7 @@ import './StyleCard.css'
 
 
 const CardItem = ({ item }) => {
-
+   
     return (
 
         <Card >
