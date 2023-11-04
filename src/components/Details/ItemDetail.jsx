@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container } from 'react-bootstrap'
 import Counter from '../Counter/Counter';
 
@@ -32,16 +32,22 @@ const paragraphStyle = {
 const ItemDetail = ({ item, onAdd }) => {
     return (
 
-        
         <Container style={itemDetailStyle}>
             <h5 style={titleStyle}>{item.title}</h5>
             <img src={item.image} alt={item.title} style={imageStyle} />
             <p style={paragraphStyle}>Descripción: {item.description}</p>
             <p style={paragraphStyle}>Precio: ${item.price}</p>
             <p style={paragraphStyle}>Categoría: {item.categoryId}</p>
-            <Counter onAdd={onAdd}/>
+            <p style={paragraphStyle}>Stock {item.stock}</p>
+
+            <Counter onAdd={onAdd} stock ={item.stock} text="Agregar al carrito" itemId={item.id} />
+  
         </Container>
     );
 };
 
 export default ItemDetail;
+
+
+
+

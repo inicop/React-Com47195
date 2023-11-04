@@ -7,16 +7,21 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addItem = (item, q) => {
+
+        console.log(item.id)
         const elPrev = isInCart(item.id);
+        console.log(elPrev);
+        console.log(item.id)
 
         if (elPrev) {
             const newCart = cart.map((el) => {
                 if (el.id === elPrev.id) {
                     el.quantity = el.quantity + q;
-                    el.price = item.price * el.quantity; // Calcula el precio correctamente
+                    el.price = item.price * el.quantity;
                     return el;
                 }
-                return el;
+                return el; 
+                
             });
             setCart(newCart);
         } else {
@@ -25,10 +30,12 @@ const CartContextProvider = ({ children }) => {
                 {
                     ...item,
                     quantity: q,
-                    price: item.price * q, // Calcula el precio al agregar un nuevo elemento
+                    price: item.price * q,
                 }
             ]);
         }
+        console.log(item + q) 
+        
     };
 
 
@@ -41,7 +48,7 @@ const CartContextProvider = ({ children }) => {
 
 
     const removeItem = (id) => {
-        const newCart = cart.filter((el) => el.item.id !== id);
+        const newCart = cart.filter((el) => el.id !== id);
         setCart(newCart)
     }
 
@@ -58,6 +65,15 @@ const CartContextProvider = ({ children }) => {
         return totalCost;
     };
 
+    const getTotalCarrito = () => {
+        let totalCarrito = 0;
+        cart.forEach((cartItem) => {
+            totalCarrito += cartItem.quantity;
+        });
+        return totalCarrito;
+    };
+
+
 
     const values = {
         cart,
@@ -65,6 +81,8 @@ const CartContextProvider = ({ children }) => {
         removeItem,
         clear,
         getTotalCost,
+        getTotalCarrito,
+    
 
     }
     return (

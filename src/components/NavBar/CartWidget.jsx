@@ -7,7 +7,7 @@ import { useContext } from 'react'
 
 const CartWidget = () => {
 
-    const {cart} = useContext(CartContext)
+    const {cart,getTotalCarrito} = useContext(CartContext)
 
     return (
         <>

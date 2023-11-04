@@ -9,6 +9,8 @@ const ItemDetailContainer = ({ id }) => {
         addItem(item, q)
     }
     const [item, setItem] = useState(null)
+
+    
     const { addItem } = useContext(CartContext)
     useEffect(() => {
         const db = getFirestore();
